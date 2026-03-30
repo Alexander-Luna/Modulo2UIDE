@@ -1,0 +1,113 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "dash",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dash",
+        "description": "dash",
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "Dash",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "dcc",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "html",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "Input",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "Output",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.express",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "dash_bootstrap_components",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dash_bootstrap_components",
+        "description": "dash_bootstrap_components",
+        "detail": "dash_bootstrap_components",
+        "documentation": {}
+    },
+    {
+        "label": "update_dash",
+        "kind": 2,
+        "importPath": "Week3.P_3_6",
+        "description": "Week3.P_3_6",
+        "peekOfCode": "def update_dash(clinic,department,careScore,startdate, enddate):        \n    #if bill_range:  controlar si no tiene valores o poner valores como arriba\n    if startdate is None or enddate is None:\n        raise dash.exceptions.PreventUpdate # No actualiza nada hasta que haya fechas validas\n    dataf=data[\n        (data[\"Clinic Name\"].isin(clinic))&\n        (data[\"Department\"].isin(department))&\n        (data[\"Care Score\"].isin(careScore))&\n        #(data[\"Check-In Time\"].between(dateRange[0],dateRange[1]))\n        (data[\"Check-In Time\"].between(startdate,enddate))",
+        "detail": "Week3.P_3_6",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "Week3.P_3_6",
+        "description": "Week3.P_3_6",
+        "peekOfCode": "data = pd.read_csv(\"./assets/clinical_analytics.csv\")\nprint(data.shape)\ndata.head()\n# Convertimos las columnas de fechas a tipo fecha\ndata['Appt Start Time'] = pd.to_datetime(data['Appt Start Time'], format='%Y-%m-%d %I:%M:%S %p')\ndata['Check-In Time'] = pd.to_datetime(data['Check-In Time'], format='%Y-%m-%d %I:%M:%S %p')\ndata['Encounter Status'] = data['Encounter Status'].fillna('Information not available')\ndata['Diagnosis Primary'] = data['Diagnosis Primary'].fillna('Information not available')\ndata['Admit Source'] = data['Admit Source'].fillna('Information not available')\napp = dash.Dash(external_stylesheets=[dbc.themes.MORPH])  ",
+        "detail": "Week3.P_3_6",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "Week3.P_3_6",
+        "description": "Week3.P_3_6",
+        "peekOfCode": "app = dash.Dash(external_stylesheets=[dbc.themes.MORPH])  \napp.layout =dbc.Container([\n    #NAVBAR COMO TITULO\n    dbc.NavbarSimple(\n        children=[],\n        brand=dbc.Row(\n            [\n                dbc.Col(html.Img(src=\"/assets/logoPic.png\", height=\"40px\")),\n                dbc.Col(\"Ejercicio Práctico - GRUPO 6 - Clinical Analytics\",\n                        style={\"color\": \"white\", \"fontWeight\": \"bold\", \"paddingLeft\": \"20px\"})",
+        "detail": "Week3.P_3_6",
+        "documentation": {}
+    }
+]
